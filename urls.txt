@@ -1,0 +1,4 @@
+https://python.org/
+https://docs.python.org/
+https://realpython.com/
+
