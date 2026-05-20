@@ -14,8 +14,8 @@ Urls are printed to stdout and errors are printed to stderr.
 ```
 git clone https://github.com/jibundeyare/url2md
 cd url2md
-python -m venv venv
-source venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.lock
 # or
 pip install -r requirements.txt
@@ -23,23 +23,23 @@ pip install -r requirements.txt
 
 ## Usage
 
-Enable pyvenv:
+Enable venv:
 
 ```
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 Get markdown for a single url:
 
 ```
-$ url2md https://python.org/
+$ python url2md.py https://python.org/
 [Welcome to Python.org](https://python.org/)
 ```
 
 Get markdown for multiple urls:
 
 ```
-$ url2md https://python.org/ https://docs.python.org/ https://realpython.com/
+$ python url2md.py https://python.org/ https://docs.python.org/ https://realpython.com/
 [Welcome to Python.org](https://python.org/)
 [3.13.5 Documentation](https://docs.python.org/)
 [Python Tutorials – Real Python](https://realpython.com/)
@@ -48,7 +48,7 @@ $ url2md https://python.org/ https://docs.python.org/ https://realpython.com/
 Get markdown for multiple urls stored in a text file:
 
 ```
-$ url2md urls.txt
+$ python url2md.py urls-test.txt
 [Welcome to Python.org](https://python.org/)
 [3.13.5 Documentation](https://docs.python.org/)
 [Python Tutorials – Real Python](https://realpython.com/)
@@ -57,12 +57,12 @@ $ url2md urls.txt
 Redirect links and errors to a single file:
 
 ```
-$ url2md urls.txt > urls.md 2>&1
+$ python url2md.py urls-test.txt > urls-test.md 2>&1
 ```
 
 Redirect links to a file and errors to another file:
 
 ```
-$ url2md urls.txt > urls.md 2> errors.log
+$ python url2md.py urls-test.txt > urls-test.md 2> errors.log
 ```
 
